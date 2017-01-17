@@ -16,7 +16,7 @@ require('./../less/styles.less');
 
 // ready event
 $(document).ready(function() {
-    console.log('originatePack ready!');
+    console.log('webSpring-Vue ready!');
 });
 
 //custom code
