@@ -1,0 +1,29 @@
+{
+  "name": "originatePack",
+  "version": "0.0.4",
+  "description": "Simple boilerplate for web apps. It's fast and it's simple - that makes it a good way to start things. Based on jQuery, Vue, Vuex and Webpack - with ES2015 support.",
+  "main": "dist/index.html",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.26.0",
+    "jquery": "^3.1.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "nyan-progress-webpack-plugin": "^1.1.4",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "vue": "^2.1.8",
+    "vue-router": "^2.1.1",
+    "vuex": "^2.1.1",
+    "webpack": "^1.14.0",
+    "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-livereload-plugin": "^0.10.0"
+  }
+}

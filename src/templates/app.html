@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+</head>
+
+<body>
+    <template id="myApp-template">
+        <div class="myApp-container">
+            <h1>Hi!</h1>
+            <div class="input">
+                <input type="text" placeholder="Let's start..." />
+            </div>
+        </div>
+    </template>
+    <div id="app">
+        <my-app></my-app>
+    </div>
+    <script src="http://localhost:35729/livereload.js"></script>
+</body>
+
+</html>
