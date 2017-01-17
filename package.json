@@ -1,5 +1,5 @@
 {
-  "name": "originatePack",
+  "name": "originate-pack",
   "version": "0.0.4",
   "description": "Simple boilerplate for web apps. It's fast and it's simple - that makes it a good way to start things. Based on jQuery, Vue, Vuex and Webpack - with ES2015 support.",
   "repository": "https://github.com/tehaiks/originatePack.git",
