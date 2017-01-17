@@ -41,7 +41,7 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin,
         new HtmlWebpackPlugin({
-            title: 'GoPack Template',
+            title: 'originatePack App Template',
             template: 'src/templates/app.html'
         }),
         new LiveReloadPlugin(),
