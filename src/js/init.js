@@ -1,5 +1,8 @@
 // dependencies
 require('script!jquery');
+let APP = {};
+window.APP = APP
+
 var Vue = require('vue');
 window.Vue = Vue;
 var Vuex = require('vuex');
@@ -10,8 +13,9 @@ Vue.config.debug = true;
 Vue.config.devtools = true;
 
 //components
-require('./vue/app.js');
 require('./vue/states.js');
+require('./vue/app.js');
+require('bulma/css/bulma.css');
 require('./../less/styles.less');
 
 // ready event

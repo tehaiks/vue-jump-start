@@ -13,6 +13,48 @@ body {
 	flex-flow:column nowrap;
 
 	h1 {
-		font-size:50px;
+		font-size:40px;
+		text-align:center;
+	}
+
+	.notification {
+		width:50vw;
+		height:35vw;
+		.flex-center();
+		flex-flow:column wrap;
+
+		@media screen and (max-width: 1200px) {
+
+		width:100vw;
+		height:100vh;
+		overflow:hidden;
+
+			h1 {
+				font-size:22px;
+			} 
+
+		}
+
+	}
+
+	.result {
+		font-size:10vw;
+		transition:color 1s ease-out;
+
+		&.is-danger {
+			color:#ff3860;
+		}
+
+		&.is-success {
+			color:#23d160;
+		}
+	}
+
+	.btn-group {
+		.flex-center;
+
+		button {
+			margin:0 24px;
+		}
 	}
 } 

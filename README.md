@@ -3,7 +3,7 @@
 </p>
 
 # webSpring-Vue
-Simple boilerplate for web apps. It's fast and it's simple - that makes it a good way to start things. Based on Webpack, Vue, Vuex, jQuery and LESS - with ES2015 support.
+Simple boilerplate for performant web apps. For me, it was a good way to start messing with SPA. Based on Webpack(v1 - with Babel Support), Vue 2.0, Vuex, jQuery, and LESS. It includes Bulma front-end framework for fast prototyping.
 
 ## Usage
 
@@ -13,7 +13,7 @@ Install using preferred dependency manager.
 OR
 `yarn install`
 
-Than init webpack in watchmode, to start live reload server:
+Then init webpack in watchmode, to start live reload server:
 
 `webpack --watch`
 

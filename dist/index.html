@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>
+        webspring-Vue
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet"></head>
+
+<body>
+    <template id="myApp-template">
+        <div class="container is-fluid  myApp-container">
+            <div class="notification">
+                <h1>Your New App, at your service!</h1>
+                <h3>Recomended use with <a href="https://github.com/vuejs/vue-devtools">Vue DevTools</a>.</h3>
+                <span class="result" title="Look at me go!" v-bind:class="{'is-success': result > 4, 'is-danger': result< -4 }">{{result}}</span>
+                <div class="btn-group">
+                    <button @click="increment" class="button is-success">Increment!</button>
+                    <button @click="decrement" class="button is-danger">Decrement!</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div id="app">
+        <my-app></my-app>
+    </div>
+    <script src="http://localhost:35729/livereload.js"></script>
+<script type="text/javascript" src="js/app.js"></script></body>
+
+</html>

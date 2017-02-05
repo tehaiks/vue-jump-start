@@ -1,14 +1,17 @@
 // Vuex vault
 
-const vault = new Vuex.Store({
+APP.vault = new Vuex.Store({
     state: {
-        count: 0
+        result: 0
     },
     mutations: {
         increment(state) {
-            state.count++
+            state.result++
+        },
+        decrement(state) {
+            state.result--
         }
     }
 })
 
-vault.commit('increment');
+APP.vault.commit('increment');

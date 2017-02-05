@@ -41,7 +41,7 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin,
         new HtmlWebpackPlugin({
-            title: 'originatePack App Template',
+            title: 'webspring-Vue',
             template: 'src/templates/app.html'
         }),
         new LiveReloadPlugin(),
