@@ -14,17 +14,16 @@ const welcomeApp = new Vue({
         }
     },
     computed: {
-        result: function() {
-            // console.log(vault)
+        result() {
             return appData.state.result;
         },
     },
     methods: {
-        increment:function() {
-            appData.commit('increment');
+        increment() {
+            appData.dispatch('increment');
         },
-        decrement:function() {
-            appData.commit('decrement');
+        decrement() {
+            appData.dispatch('decrement');
         }
     }
 });

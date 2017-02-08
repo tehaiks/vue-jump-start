@@ -8709,16 +8709,15 @@
 	    },
 	    computed: {
 	        result: function result() {
-	            // console.log(vault)
 	            return _store.appData.state.result;
 	        }
 	    },
 	    methods: {
 	        increment: function increment() {
-	            _store.appData.commit('increment');
+	            _store.appData.dispatch('increment');
 	        },
 	        decrement: function decrement() {
-	            _store.appData.commit('decrement');
+	            _store.appData.dispatch('decrement');
 	        }
 	    }
 	});
@@ -8757,12 +8756,19 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
-	var actions = exports.actions = {};
+	var actions = exports.actions = {
+	    increment: function increment(context) {
+	        context.commit('increment');
+	    },
+	    decrement: function decrement(context) {
+	        context.commit('decrement');
+	    }
+	};
 
 /***/ },
 /* 6 */
