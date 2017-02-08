@@ -12,7 +12,7 @@ module.exports = {
     },
     output: {
         path: "dist",
-        filename: "[name].js",
+        filename: "[name].js"
 
     },
     module: {
@@ -58,7 +58,7 @@ module.exports = {
         // }),
         new CleanWebpackPlugin(['dist'], {
             verbose: true,
-            dry: false,
+            dry: false
         })
     ],
 };

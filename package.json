@@ -1,6 +1,6 @@
 {
   "name": "webSpring-Vue",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "Simple boilerplate for web apps. It's fast and it's simple - that makes it a good way to start things. Based on jQuery, Vue, Vuex and Webpack - with ES2015 support.",
   "repository": "https://github.com/tehaiks/originatePack.git",
   "main": "dist/index.html",
