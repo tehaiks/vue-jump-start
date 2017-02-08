@@ -16,7 +16,7 @@ const welcomeApp = new Vue({
     computed: {
         result() {
             return appData.state.result;
-        },
+        }
     },
     methods: {
         increment() {

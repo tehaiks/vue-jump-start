@@ -13,7 +13,6 @@ module.exports = {
     output: {
         path: "dist",
         filename: "[name].js"
-
     },
     module: {
         loaders: [{
@@ -31,11 +30,11 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.common.js',
+            'vue$': 'vue/dist/vue.common.js'
         }
     },
     externals: {
-        'jquery': '$',
+        'jquery': '$'
     },
     plugins: [
         new webpack.optimize.DedupePlugin(),
@@ -60,5 +59,5 @@ module.exports = {
             verbose: true,
             dry: false
         })
-    ],
+    ]
 };
