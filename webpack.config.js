@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+let webpack = require('webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let NyanProgressPlugin = require('nyan-progress-webpack-plugin');
+let LiveReloadPlugin = require('webpack-livereload-plugin');
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
+let CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -48,13 +48,14 @@ module.exports = {
         new ExtractTextPlugin('css/styles.css', { allChunks: true }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new NyanProgressPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            mangle: false,
-            compress: {
-                warnings: false
-            }
-        }),
+        // TMP OFF WHILE DEBUGING
+        // new webpack.optimize.UglifyJsPlugin({
+        //     sourceMap: false,
+        //     mangle: false,
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
         new CleanWebpackPlugin(['dist'], {
             verbose: true,
             dry: false,

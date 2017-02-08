@@ -1,29 +1,23 @@
-// dependencies
+// jquery
 require('script!jquery');
+
+// Global Variables
 let APP = {};
-window.APP = APP
+window.APP = APP;
 
-var Vue = require('vue');
-window.Vue = Vue;
-var Vuex = require('vuex');
-window.Vuex = Vuex;
+// Components
+require('./vuex/store.js');
+require('./app.js');
 
-// cfg 
-Vue.config.debug = true;
-Vue.config.devtools = true;
-
-//components
-require('./vue/states.js');
-require('./vue/app.js');
+// Styles
 require('bulma/css/bulma.css');
 require('./../less/styles.less');
 
-// ready event
+// Eeady event
 $(document).ready(function() {
-    console.log('webSpring-Vue ready!');
+    // console.log('ready!');
 });
 
-//custom code
-//
+// Custom code
 //
 //
