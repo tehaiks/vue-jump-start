@@ -12,10 +12,10 @@
 <body>
     <template id="welcomeApp">
         <div class="container is-fluid  welcomeApp-container">
-            <div class="notification">
+            <div class="notification" v-bind:class="{'all-is-well': result > 4, 'not-so-good': result< -4 }">
                 <h1>Your New App, at your service!</h1>
                 <h3>Recomended use with <a href="https://github.com/vuejs/vue-devtools">Vue DevTools</a>.</h3>
-                <span class="result" title="Look at me go!" v-bind:class="{'is-success': result > 4, 'is-danger': result< -4 }">{{result}}</span>
+                <span class="result" title="Look at me go!">{{result}}</span>
                 <div class="btn-group">
                     <button @click="increment" class="button is-success">Increment!</button>
                     <button @click="decrement" class="button is-danger">Decrement!</button>

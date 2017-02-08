@@ -5656,6 +5656,7 @@ body {
 .welcomeApp-container h1 {
   font-size: 40px;
   text-align: center;
+  transition: 700ms;
 }
 .welcomeApp-container .notification {
   width: 50vw;
@@ -5668,6 +5669,7 @@ body {
       align-items: center;
   -ms-flex-flow: column wrap;
       flex-flow: column wrap;
+  transition: 1000ms;
 }
 @media screen and (max-width: 1200px) {
   .welcomeApp-container .notification {
@@ -5679,15 +5681,27 @@ body {
     font-size: 22px;
   }
 }
-.welcomeApp-container .result {
-  font-size: 10vw;
-  transition: color 1s ease-out;
+.welcomeApp-container .notification.all-is-well {
+  box-shadow: 0 0 30px #23d160;
 }
-.welcomeApp-container .result.is-danger {
+.welcomeApp-container .notification.all-is-well .result {
+  color: #23d160;
+}
+.welcomeApp-container .notification.all-is-well h1 {
+  color: #1ca54c;
+}
+.welcomeApp-container .notification.not-so-good {
+  box-shadow: 0 0 30px #ff3860;
+}
+.welcomeApp-container .notification.not-so-good .result {
   color: #ff3860;
 }
-.welcomeApp-container .result.is-success {
-  color: #23d160;
+.welcomeApp-container .notification.not-so-good h1 {
+  color: #ff0537;
+}
+.welcomeApp-container .result {
+  font-size: 10vw;
+  transition: color 1000ms ease-out;
 }
 .welcomeApp-container .btn-group {
   display: -ms-flexbox;

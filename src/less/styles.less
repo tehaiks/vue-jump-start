@@ -1,5 +1,9 @@
 @import 'helpers';
 
+@color-success: #23d160;
+@color-danger: #ff3860;
+@transition: 1000ms;
+
 body {
 	.flex-center();
 	height:100vh;
@@ -15,6 +19,7 @@ body {
 	h1 {
 		font-size:40px;
 		text-align:center;
+		transition:@transition * 0.7;
 	}
 
 	.notification {
@@ -22,6 +27,7 @@ body {
 		height:35vw;
 		.flex-center();
 		flex-flow:column wrap;
+		transition: @transition;
 
 		@media screen and (max-width: 1200px) {
 
@@ -35,19 +41,35 @@ body {
 
 		}
 
+		&.all-is-well {
+			box-shadow:0 0 30px @color-success;
+
+			.result {
+				color:@color-success;
+			}
+
+			h1 {
+				color:darken(@color-success, 10%);
+			}
+		}
+
+		&.not-so-good {
+			box-shadow:0 0 30px @color-danger;
+
+			.result {
+				color:@color-danger;
+			}
+
+			h1 {
+				color:darken(@color-danger, 10%);
+			}
+		}
+
 	}
 
 	.result {
 		font-size:10vw;
-		transition:color 1s ease-out;
-
-		&.is-danger {
-			color:#ff3860;
-		}
-
-		&.is-success {
-			color:#23d160;
-		}
+		transition:color @transition ease-out;
 	}
 
 	.btn-group {
