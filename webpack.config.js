@@ -62,10 +62,7 @@ module.exports = {
             dry: false
         }),
         new HappyPack({
-            // loaders is the only required parameter:
             loaders: ['babel?presets[]=es2015'],
-
-            // customize as needed, see Configuration below
         }),
         new HtmlWebpackPlugin({
             title: 'webspring-Vue',
@@ -73,19 +70,7 @@ module.exports = {
         }),
         new LiveReloadPlugin(),
         new ExtractTextPlugin({ filename: "css/styles.css", allChunks: true }),
-        // new ExtractTextPlugin.extract({
-        //     fallback: 'style-loader',
-        //     use: [{
-        //         use: 'css-loader',
-        //         options: {
-        //             modules: true
-        //         }
-        //     }, {
-        //         use: 'less-loader'
-        //     }, ]
-        // })
-        // new ExtractTextPlugin('css/styles.css', { allChunks: true }),
-        // new NyanProgressPlugin(),
+        new NyanProgressPlugin(),
         // TMP OFF WHILE DEBUGING
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: false,

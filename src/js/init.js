@@ -7,11 +7,8 @@ require('script-loader!jquery');
 import css from 'bulma/css/bulma.css';
 import css from './../less/styles.less';
 
-// Instance
+// Fire App
 import myApp from './app'
-
-// Components
-
 
 // Eeady event
 $(document).ready(function() {
