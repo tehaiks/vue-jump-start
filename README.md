@@ -5,7 +5,7 @@
 [![dependencies Status](https://david-dm.org/tehaiks/webSpring-Vue/status.svg?style=flat-square)](https://david-dm.org/tehaiks/webSpring-Vue)
 
 # webSpring-Vue
-Simple boilerplate for performant web apps. For me, it was a good way to start messing a bit more with Vuex. Based on Webpack(v1 - with Babel Support), Vue 2.0, Vuex, jQuery, and LESS. It includes Bulma front-end framework for fast prototyping.
+Vue & Webpack Boilerplate: Vuex, jQuery, LESS, Bulma framework for  prototyping.
 
 ## Usage
 
@@ -26,5 +26,4 @@ OR
 Fire webpack in watchmode, to start live reload server: 
 
 `webpack --watch`
-
 
