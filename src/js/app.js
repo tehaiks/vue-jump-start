@@ -10,7 +10,7 @@ export const myApp = new Vue({
     template: '#myApp',
     el: '#app', // instance startig container
     components: {
-        'my-component': myComponent,
+        'my-component': myComponent
     },
     data: function() {
         return {

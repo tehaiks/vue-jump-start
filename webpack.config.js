@@ -6,6 +6,7 @@ let LiveReloadPlugin = require('webpack-livereload-plugin');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 let HappyPack = require('happypack');
+
 module.exports = {
     context: path.resolve(__dirname),
     cache: true,
@@ -18,13 +19,10 @@ module.exports = {
         filename: "js/[name].js"
     },
     module: {
-        rules: [            {
-                test: /.js$/,
-                loaders: ['happypack/loader'],
-                include: [
-                    // ...
-                ],
-            }, {
+        rules: [{
+            test: /.js$/,
+            loaders: ['happypack/loader']
+        }, {
             test: /\.html$/,
             loader: 'html-loader'
         }, {
@@ -39,22 +37,21 @@ module.exports = {
             }, {
                 loader: "less-loader" // compiles Less to CSS
             }]
-        },
-        {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-            },]
+        }, {
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        }]
     },
     resolveLoader: {
         moduleExtensions: ["-loader"]
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.common.js',
+            'vue$': 'vue/dist/vue.common.js'
         }
     },
     externals: {
-        'jquery': '$',
+        'jquery': '$'
     },
     plugins: [
         new CleanWebpackPlugin(['dist'], {
@@ -62,7 +59,7 @@ module.exports = {
             dry: false
         }),
         new HappyPack({
-            loaders: ['babel?presets[]=es2015'],
+            loaders: ['babel?presets[]=es2015']
         }),
         new HtmlWebpackPlugin({
             title: 'webspring-Vue',
@@ -70,7 +67,7 @@ module.exports = {
         }),
         new LiveReloadPlugin(),
         new ExtractTextPlugin({ filename: "css/styles.css", allChunks: true }),
-        new NyanProgressPlugin(),
+        new NyanProgressPlugin()
         // TMP OFF WHILE DEBUGING
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: false,

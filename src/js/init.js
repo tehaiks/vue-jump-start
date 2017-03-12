@@ -4,8 +4,8 @@
 require('script-loader!jquery');
 
 // Styles
-import css from 'bulma/css/bulma.css';
-import css from './../less/styles.less';
+import bulma from 'bulma/css/bulma.css';
+import less from './../less/styles.less';
 
 // Fire App
 import myApp from './app'
