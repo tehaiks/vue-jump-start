@@ -1,7 +1,3 @@
-<p align="center">
-<img width="460" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/158719/webspring.png" alt="WebSpring Logo" />
-</p>
-
 [![dependencies Status](https://david-dm.org/tehaiks/webSpring-Vue/status.svg?style=flat-square)](https://david-dm.org/tehaiks/webSpring-Vue)
 
 # webSpring-Vue
