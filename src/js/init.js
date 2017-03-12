@@ -1,19 +1,17 @@
 "use strict";
 
 // jquery
-require('script!jquery');
-
-// Global Variables
-let APP = {};
-window.APP = APP;
-
-// Components
-require('./vuex/store.js');
-require('./app.js');
+require('script-loader!jquery');
 
 // Styles
-require('bulma/css/bulma.css');
-require('./../less/styles.less');
+import css from 'bulma/css/bulma.css';
+import css from './../less/styles.less';
+
+// Instance
+import myApp from './app'
+
+// Components
+
 
 // Eeady event
 $(document).ready(function() {

@@ -1,52 +1,91 @@
+let path = require('path');
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 let LiveReloadPlugin = require('webpack-livereload-plugin');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let CleanWebpackPlugin = require('clean-webpack-plugin');
-
+let HappyPack = require('happypack');
 module.exports = {
+    context: path.resolve(__dirname),
+    cache: true,
     entry: {
-        'js/app': ['./src/js/init.js']
+        'app': ['./src/js/init']
 
     },
     output: {
         path: "dist",
-        filename: "[name].js"
+        filename: "js/[name].js"
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015']
-            }
+        rules: [            {
+                test: /.js$/,
+                loaders: ['happypack/loader'],
+                include: [
+                    // ...
+                ],
+            }, {
+            test: /\.html$/,
+            loader: 'html-loader'
         }, {
-            test: /\.(less|css)$/,
-            exclude: /\b(some\-css\-framework|whatever)\b/i,
-            loader: ExtractTextPlugin.extract("style?sourceMap", "css?sourceMap!autoprefixer?browsers=last 2 version!less")
-        }]
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }, {
+            test: /\.less$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings
+            }, {
+                loader: "css-loader" // translates CSS into CommonJS
+            }, {
+                loader: "less-loader" // compiles Less to CSS
+            }]
+        },
+        {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+            },]
+    },
+    resolveLoader: {
+        moduleExtensions: ["-loader"]
     },
     resolve: {
         alias: {
-            'vue$': 'vue/dist/vue.common.js'
+            'vue$': 'vue/dist/vue.common.js',
         }
     },
     externals: {
-        'jquery': '$'
+        'jquery': '$',
     },
     plugins: [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin,
+        new CleanWebpackPlugin(['dist'], {
+            verbose: true,
+            dry: false
+        }),
+        new HappyPack({
+            // loaders is the only required parameter:
+            loaders: ['babel?presets[]=es2015'],
+
+            // customize as needed, see Configuration below
+        }),
         new HtmlWebpackPlugin({
             title: 'webspring-Vue',
             template: 'src/templates/app.html'
         }),
         new LiveReloadPlugin(),
-        new ExtractTextPlugin('css/styles.css', { allChunks: true }),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new NyanProgressPlugin(),
+        new ExtractTextPlugin({ filename: "css/styles.css", allChunks: true }),
+        // new ExtractTextPlugin.extract({
+        //     fallback: 'style-loader',
+        //     use: [{
+        //         use: 'css-loader',
+        //         options: {
+        //             modules: true
+        //         }
+        //     }, {
+        //         use: 'less-loader'
+        //     }, ]
+        // })
+        // new ExtractTextPlugin('css/styles.css', { allChunks: true }),
+        // new NyanProgressPlugin(),
         // TMP OFF WHILE DEBUGING
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: false,
@@ -55,9 +94,5 @@ module.exports = {
         //         warnings: false
         //     }
         // }),
-        new CleanWebpackPlugin(['dist'], {
-            verbose: true,
-            dry: false
-        })
     ]
 };

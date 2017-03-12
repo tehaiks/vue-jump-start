@@ -2,11 +2,11 @@ import Vue from 'vue';
 Vue.config.debug = true;
 Vue.config.devtools = true;
 
-import { appData } from './vuex/store';
+import { myAppData } from './vuex/store';
 
-const welcomeApp = new Vue({
-    name: 'welcomeApp',
-    template: '#welcomeApp',
+export const myApp = new Vue({
+    name: 'myApp',
+    template: '#myApp',
     el: '#app',
     data: function() {
         return {
@@ -15,15 +15,15 @@ const welcomeApp = new Vue({
     },
     computed: {
         result() {
-            return appData.state.result;
+            return myAppData.state.result;
         }
     },
     methods: {
         increment() {
-            appData.dispatch('increment');
+            myAppData.dispatch('increment');
         },
         decrement() {
-            appData.dispatch('decrement');
+            myAppData.dispatch('decrement');
         }
     }
 });
