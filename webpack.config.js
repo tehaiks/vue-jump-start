@@ -15,7 +15,7 @@ module.exports = {
 
     },
     output: {
-        path: "dist",
+        path: path.resolve("./dist/"),
         filename: "js/[name].js"
     },
     module: {
@@ -27,19 +27,35 @@ module.exports = {
             loader: 'html-loader'
         }, {
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: [
+                'style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 1
+                    }
+                },
+                'postcss-loader'
+            ]
         }, {
             test: /\.less$/,
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            }, {
-                loader: "less-loader" // compiles Less to CSS
-            }]
+            use: [
+                'style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 1
+                    }
+                },
+                'postcss-loader',
+                'less-loader'
+            ]
         }, {
             test: /\.vue$/,
-            loader: 'vue-loader'
+            loader: 'vue-loader',
+            options: {
+                postcss: [require('postcss-cssnext')({
+                    warnForDuplicates: false
+                })]
+            }
         }]
     },
     resolveLoader: {
@@ -53,21 +69,46 @@ module.exports = {
     externals: {
         'jquery': '$'
     },
+    devServer: {
+        contentBase: path.resolve("./dist/"),
+        compress: true,
+        port: 9000,
+        host: '127.0.0.1',
+        hot: true,
+    },
     plugins: [
         new CleanWebpackPlugin(['dist'], {
             verbose: true,
             dry: false
         }),
+        new webpack.HotModuleReplacementPlugin(),
         new HappyPack({
             loaders: ['babel?presets[]=es2015']
         }),
         new HtmlWebpackPlugin({
             title: 'webspring-Vue',
-            template: 'src/templates/app.html'
+            template: 'src/templates/app.html',
+            inject: true,
+            cache: true,
+            hash: true,
+            showErrors: true,
+            minify: {
+                html5: true,
+                removeComments: true,
+                sortClassName: true,
+                maxLineLength: 100,
+                preserveLineBreaks: true,
+                collapseWhitespace: true,
+                decodeEntities: true
+            },
         }),
         new LiveReloadPlugin(),
-        new ExtractTextPlugin({ filename: "css/styles.css", allChunks: true }),
-        new NyanProgressPlugin()
+        new ExtractTextPlugin({
+            filename: "css/styles.css",
+            allChunks: true
+        }),
+        new NyanProgressPlugin(),
+
         // TMP OFF WHILE DEBUGING
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: false,

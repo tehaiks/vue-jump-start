@@ -14,7 +14,7 @@ export default {
     data: function() {
         return {
 
-            path: '../src/components/component.vue',
+            path: 'https://raw.githubusercontent.com/tehaiks/webSpring-Vue/master/src/components/component.vue',
             title: 'Imported Goodies',
             content: 'This is a single file <strong>.Vue</strong> component'
 

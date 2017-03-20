@@ -1,82 +1,83 @@
 @import 'helpers';
-
 @color-success: #23d160;
 @color-danger: #ff3860;
 @transition: 1000ms;
-
 body {
-	.flex-center();
-	height:100vh;
-	overflow:hidden;
-	background:#eee;
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    background: #eee;
+    .flex-center();
 }
 
 .myApp-container {
-	.flex-center();
-	flex-flow:column nowrap;
-
-	h1 {
-		font-size:40px;
-		text-align:center;
-		transition:@transition * 0.7;
-	}
-
-	.notification {
-		width:50vw;
-		height:35vw;
-		.flex-center();
-		flex-flow:column wrap;
-		transition: @transition;
-
-		@media screen and (max-width: 1200px) {
-
-		width:100vw;
-		height:100vh;
-		overflow:hidden;
-
-			h1 {
-				font-size:22px;
-			} 
-
-		}
-
-		&.all-is-well {
-			box-shadow:0 0 30px @color-success;
-
-			.result {
-				color:@color-success;
-			}
-
-			h1 {
-				color:darken(@color-success, 10%);
-			}
-		}
-
-		&.not-so-good {
-			box-shadow:0 0 30px @color-danger;
-
-			.result {
-				color:@color-danger;
-			}
-
-			h1 {
-				color:darken(@color-danger, 10%);
-			}
-		}
-
-	}
-
-	.result {
-		font-size:10vw;
-		transition:color @transition ease-out;
-	}
-
-	.btn-group {
-		.flex-center;
-
-		button {
-			margin:0 24px;
-		}
-	}
-} 
+    .flex-center();
+    flex-flow: column nowrap;
+    h1 {
+        font-size: 40px;
+        transition: @transition * .7;
+        text-align: center;
+    }
+    .bg-decor {
+        font-size: 130vh;
+        position: absolute;
+        opacity: 0.07;
+        transition: @transition;
+    }
+    .notification {
+        width: 50vw;
+        height: 35vw;
+        transition: @transition;
+        .flex-center();
+        flex-flow: column wrap;
+        background-color: rgba(245, 245, 245, 0.8);
+        @media screen and (max-width: 1200px) {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            h1 {
+                font-size: 22px;
+            }
+        }
+    }
+    .result {
+        font-size: 10vw;
+        transition: color @transition ease-out;
+    }
+    .btn-group {
+        .flex-center;
+        button {
+            margin: 0 24px;
+        }
+    }
+    &.all-is-well {
+        .bg-decor {
+            color: @color-success;
+            opacity: 0.2;
+        }
+        .notification {
+            box-shadow: 0 0 30px @color-success;
+            .result {
+                color: @color-success;
+            }
+            h1 {
+                color: darken(@color-success, 10%);
+            }
+        }
+    }
+    &.not-so-good {
+        .bg-decor {
+            color: @color-danger;
+            opacity: 0.2;
+        }
+        .notification {
+            box-shadow: 0 0 30px @color-danger;
+            .result {
+                color: @color-danger;
+            }
+            h1 {
+                color: darken(@color-danger, 10%);
+            }
+        }
+    }
+}
