@@ -1,10 +1,9 @@
 [![dependencies Status](https://david-dm.org/tehaiks/webSpring-Vue/status.svg?style=flat-square)](https://david-dm.org/tehaiks/webSpring-Vue)
 
-# webSpring-Vue
-Vue & Webpack Boilerplate: Vuex, jQuery, LESS, Bulma framework for  prototyping.
+# Vue Jump Start
+Vue & Webpack Boilerplate: Vuex, LESS, Bulma framework for prototyping.
 
 ## Usage
-
 Install using preferred dependency manager.
 
 `npm install`
