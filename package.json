@@ -2,7 +2,7 @@
   "name": "vue_jump_start",
   "version": "0.2.1",
   "description": "Simple boilerplate for web apps, using Vue, Vuex and Webpack - with ES6 support.",
-  "repository": "https://github.com/tehaiks/originatePack.git",
+  "repository": "https://github.com/tehaiks/vue-jump-start.git",
   "main": "dist/index.html",
   "license": "MIT",
   "dependencies": {
