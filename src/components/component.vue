@@ -11,21 +11,19 @@
 <script>
 export default {
     name: 'custom-component',
-    data: function() {
+    data: function () {
         return {
 
-            path: 'https://raw.githubusercontent.com/tehaiks/webSpring-Vue/master/src/components/component.vue',
+            path: 'https://raw.githubusercontent.com/tehaiks/vue-jump-start/master/src/components/component.vue',
             title: 'Imported Goodies',
             content: 'This is a single file <strong>.Vue</strong> component'
 
         }
     },
-    mounted: function() {
-
+    mounted: function () {
         console.log('component loaded!');
     },
     methods: {
-
 
     }
 }
