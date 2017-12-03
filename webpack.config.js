@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -113,7 +112,6 @@ module.exports = {
         decodeEntities: true,
       },
     }),
-    new LiveReloadPlugin(),
     new ExtractTextPlugin({
       filename: 'css/styles.css',
       allChunks: true,
