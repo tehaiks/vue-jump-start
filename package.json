@@ -37,7 +37,8 @@
     "vue-template-compiler": "^2.5.9",
     "vuex": "^3.0.1",
     "webpack": "^3.9.1",
-    "webpack-bundle-analyzer": "^2.9.1"
+    "webpack-bundle-analyzer": "^2.9.1",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
@@ -47,5 +48,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
     "webpack-dev-server": "^2.9.5"
-  }
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
